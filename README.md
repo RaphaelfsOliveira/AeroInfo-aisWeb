@@ -13,3 +13,12 @@ Material Design Usado no APP
 
 Icones
 `https://material.io/resources/icons/?style=outline`
+
+
+$ `sudo apt-get install curl`
+$ `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`
+
+$ `sudo apt-get install nodejs`
+
+$ `sudo npm install --save puppeteer --unsafe-perm=true`
+$ `sudo npm install -g puppeteer --unsafe-perm=true`
