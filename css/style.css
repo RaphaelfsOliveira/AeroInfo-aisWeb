@@ -5,3 +5,8 @@ body {
 .card {
   margin-top: 30px;
 }
+
+.btn-secondary {
+  float: right;
+  margin-top: 10px;
+}
