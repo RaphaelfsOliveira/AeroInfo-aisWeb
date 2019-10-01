@@ -3,3 +3,7 @@ export const elements = {
   searchInput: document.querySelector('#inputCodigoICAO'),
   cardDeck: document.querySelector('.card-here'),
 };
+
+export const inputs = {
+  get: () => elements.searchInput.value,
+}
