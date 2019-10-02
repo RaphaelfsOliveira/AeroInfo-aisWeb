@@ -6,6 +6,11 @@ import * as actions from './actions';
 const state = {};
 
 export const controlSearch = async () => {
+  // 1. As cartas disponíveis
+  // 2. Os horários de nascer e pôr do sol de hoje
+  // 3. A informação de TAF e METAR disponíveis
+  // // TODO: COLOCAR A QUERY PARA PEGAR O CODIGO!!d
+
   const query = inputs.get();
 
   if (query) {
@@ -19,15 +24,15 @@ export const controlSearch = async () => {
     const loadId = 'loading';
     actions.initLoading(elements.cardDeck, loadId);
 
-    await state.search.flightInformation();
-    console.log('stateData', state.search.data);
+    await state.search.flightLetters();
+    // console.log('stateData', state.search.data);
 
     actions.finishLoading(`#${loadId}`);
 
     actions.disableForm(false);
 
     // TODO: fazer timedate do card
-    actions.loadResults(12, state.search.data, Date.now());
+    actions.loadResults(4, state.search.dataLetters);
   };
 
 };

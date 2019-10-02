@@ -7,10 +7,10 @@ elements.searchForm.addEventListener('submit', e => {
   views.controlSearch();
 });
 
-export const loadResults = (cardSize, body, timeDate) => {
-  for (let i = 0; i < 1; i++) {
-    elements.cardDeck.insertAdjacentHTML('afterbegin', templates.card(cardSize, body, timeDate));
-  }
+export const loadResults = (cardSize, results) => {
+  results.forEach(result => {
+    elements.cardDeck.insertAdjacentHTML('afterbegin', templates.cardLetter(cardSize, result, dateNow()));
+  });
 };
 
 export const initLoading = (parent, elementId) => {
@@ -25,3 +25,8 @@ export const disableForm = status => {
   elements.buttonSearch.disabled = status;
   elements.searchInput.disabled = status;
 }
+
+export const dateNow = () => {
+  const date = new Date();
+  return date.toString().split('GMT')[0];
+};
