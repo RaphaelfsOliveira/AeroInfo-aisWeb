@@ -34,3 +34,10 @@ export const cardImage = (size, body) => {
     </div>
   </div>`
 };
+
+export const loading = elementId => {
+  return `
+  <div class="col-sm-12 text-center" id="${elementId}">
+    <div class="lds-dual-ring"></div>
+  </div>`
+};

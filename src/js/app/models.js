@@ -8,6 +8,7 @@ export default class Search {
 
   async flightInformation() {
     const area = `&area=aero&IcaoCode=SBBR`;
+    // const area = `&area=aero&IcaoCode=${this.query}`;
 
     try {
       const getData = await fetch(`${this.URL}${area}`);
