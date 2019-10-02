@@ -16,6 +16,36 @@ export const cardLetter = (size, letter, timeDate) => {
   </div>`
 };
 
+export const cardSunriseSunset = (size, info, timeDate) => {
+  return `
+  <div class="col-sm-${size}">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          Aeroport ${info.aero}
+          <i class="material-icons icon-image-preview">airplanemode_active</i>
+        </h5>
+        <p class="card-text">
+          NASCER / POR DO SOL
+          <div class="row text-center">
+            <div class="col-sm-6 suninfo">
+              <label class="sun-text">${info.sunrise}</label>
+              <i class="material-icons icon-image-preview sun-icon">brightness_5</i>
+            </div>
+            <div class="col-sm-6 suninfo">
+              <label class="sun-text">${info.sunset}</label>
+              <i class="material-icons icon-image-preview sun-icon">brightness_4</i>
+            </div>
+          </div>
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">last update ${timeDate}</small>
+      </div>
+    </div>
+  </div>`
+};
+
 export const cardImage = (size, body, timeDate) => {
   return `
   <div class="col-sm-${size}">

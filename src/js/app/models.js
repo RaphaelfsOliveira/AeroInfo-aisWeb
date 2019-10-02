@@ -37,15 +37,14 @@ export default class Search {
       const parser = new DOMParser();
       const doc = parser.parseFromString(data, "application/xml");
 
-      const items = doc.querySelectorAll('item');
+      const items = doc.querySelectorAll('day');
 
-      this.dataLetters = getXMLItems(items);
+      this.dataSunriseSunset = getXMLItems(items);
 
     } catch (error) {
       alert(`API Error: ${error}`);
     }
-
-  };d
+  };
 
   // end Search
 };

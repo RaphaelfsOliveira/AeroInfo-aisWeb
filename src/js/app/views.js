@@ -25,14 +25,16 @@ export const controlSearch = async () => {
     actions.initLoading(elements.cardDeck, loadId);
 
     await state.search.flightLetters();
-    // console.log('stateData', state.search.data);
+    await state.search.sunriseSunset();
+
+    // console.log('stateData', state.search.dataSunriseSunset);
 
     actions.finishLoading(`#${loadId}`);
 
     actions.disableForm(false);
 
-    // TODO: fazer timedate do card
-    actions.loadResults(4, state.search.dataLetters);
+    actions.loadResults(6, state.search.dataSunriseSunset, 'cardSunriseSunset');
+    actions.loadResults(4, state.search.dataLetters, 'cardLetter');
   };
 
 };

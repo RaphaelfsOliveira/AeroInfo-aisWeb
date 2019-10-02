@@ -2,6 +2,27 @@ body {
   background-color: #bcbcbc;
 }
 
+.suninfo {
+  font-size: 35px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.sun-text {
+  margin-top: 13px;
+  font-size: 35px;
+}
+
+.material-icons {
+  float: right;
+  font-size: 40px;
+}
+
+.sun-icon {
+  font-size: 60px;
+  float: left;
+}
+
 .card {
   margin-top: 10px;
   margin-bottom: 10px;
