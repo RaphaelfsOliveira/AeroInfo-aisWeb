@@ -1,4 +1,4 @@
-export const card = (size, body) => {
+export const card = (size, body, timeDate) => {
   return `
   <div class="col-sm-${size}">
     <div class="card">
@@ -10,13 +10,13 @@ export const card = (size, body) => {
         <p class="card-text">${body}</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">${timeDate}</small>
       </div>
     </div>
   </div>`
 };
 
-export const cardImage = (size, body) => {
+export const cardImage = (size, body, timeDate) => {
   return `
   <div class="col-sm-${size}">
     <div class="card">
@@ -29,7 +29,7 @@ export const cardImage = (size, body) => {
         <p class="card-text">${body}</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">${timeDate}</small>
       </div>
     </div>
   </div>`

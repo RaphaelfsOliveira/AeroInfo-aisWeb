@@ -26,7 +26,8 @@ export const controlSearch = async () => {
 
     actions.disableForm(false);
 
-    actions.loadResults(12, state.search.data);
+    // TODO: fazer timedate do card
+    actions.loadResults(12, state.search.data, Date.now());
   };
 
 };

@@ -7,7 +7,8 @@ export default class Search {
   };
 
   async flightInformation() {
-    const area = `&area=aero&IcaoCode=SBMT`;
+    // const area = `&area=aero&IcaoCode=SBMT`;
+    const area = `&area=cartas&dt=2018-08-16`;
     // const area = `&area=aero&IcaoCode=${this.query}`;
 
     try {

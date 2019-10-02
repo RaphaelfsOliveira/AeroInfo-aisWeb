@@ -7,9 +7,9 @@ elements.searchForm.addEventListener('submit', e => {
   views.controlSearch();
 });
 
-export const loadResults = (cardSize, body) => {
+export const loadResults = (cardSize, body, timeDate) => {
   for (let i = 0; i < 1; i++) {
-    elements.cardDeck.insertAdjacentHTML('afterbegin', templates.card(cardSize, body));
+    elements.cardDeck.insertAdjacentHTML('afterbegin', templates.card(cardSize, body, timeDate));
   }
 };
 
