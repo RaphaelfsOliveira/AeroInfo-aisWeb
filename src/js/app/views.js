@@ -12,6 +12,9 @@ export const controlSearch = async () => {
     console.log(query);
     state.search = new Search(query);
 
+
+    disableForm(true);
+
     const loadId = 'loading';
     initLoading(elements.cardDeck, loadId);
 
@@ -19,6 +22,8 @@ export const controlSearch = async () => {
     console.log('stateData', state.search.data);
 
     finishLoading(`#${loadId}`);
+
+    disableForm(false);
 
     loadResults(12, state.search.data);
   };
@@ -38,3 +43,8 @@ const initLoading = (parent, elementId) => {
 const finishLoading = elementId => {
   document.querySelector(elementId).remove()
 };
+
+const disableForm = status => {
+  elements.buttonSearch.disabled = status;
+  elements.searchInput.disabled = status;
+}
