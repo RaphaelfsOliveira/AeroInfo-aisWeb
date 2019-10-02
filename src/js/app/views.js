@@ -1,6 +1,7 @@
 import Search from './models';
 import { elements, inputs } from './base';
 import * as templates from './templates';
+import * as actions from './actions';
 
 const state = {};
 
@@ -13,38 +14,19 @@ export const controlSearch = async () => {
     state.search = new Search(query);
 
 
-    disableForm(true);
+    actions.disableForm(true);
 
     const loadId = 'loading';
-    initLoading(elements.cardDeck, loadId);
+    actions.initLoading(elements.cardDeck, loadId);
 
     await state.search.flightInformation();
     console.log('stateData', state.search.data);
 
-    finishLoading(`#${loadId}`);
+    actions.finishLoading(`#${loadId}`);
 
-    disableForm(false);
+    actions.disableForm(false);
 
-    loadResults(12, state.search.data);
+    actions.loadResults(12, state.search.data);
   };
 
 };
-
-const loadResults = (cardSize, body) => {
-  for (let i = 0; i < 1; i++) {
-    elements.cardDeck.insertAdjacentHTML('afterbegin', templates.card(cardSize, body));
-  }
-};
-
-const initLoading = (parent, elementId) => {
-  parent.insertAdjacentHTML('afterbegin', templates.loading(elementId));
-};
-
-const finishLoading = elementId => {
-  document.querySelector(elementId).remove()
-};
-
-const disableForm = status => {
-  elements.buttonSearch.disabled = status;
-  elements.searchInput.disabled = status;
-}
