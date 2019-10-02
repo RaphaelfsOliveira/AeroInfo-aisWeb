@@ -22,7 +22,7 @@ export const cardSunriseSunset = (size, info, timeDate) => {
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">
-          Aeroport ${info.aero}
+          Aeroporto ${info.aero}
           <i class="material-icons icon-image-preview">airplanemode_active</i>
         </h5>
         <p class="card-text">
@@ -36,6 +36,33 @@ export const cardSunriseSunset = (size, info, timeDate) => {
               <label class="sun-text">${info.sunset}</label>
               <i class="material-icons icon-image-preview sun-icon">brightness_4</i>
             </div>
+          </div>
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">last update ${timeDate}</small>
+      </div>
+    </div>
+  </div>`
+};
+
+export const cardMeteorology = (size, info, timeDate) => {
+  return `
+  <div class="col-sm-${size}">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          Meteorologia
+          <i class="material-icons icon-image-preview">cloud</i>
+        </h5>
+        <p class="card-text">
+          <div class="row metar-taf">
+            <b>METAR</b>
+            <label class="info-met">${info.metar}</label>
+          </div>
+          <div class="row metar-taf">
+            <b>TAF</b>
+            <label class="info-met">${info.taf}</label>
           </div>
         </p>
       </div>

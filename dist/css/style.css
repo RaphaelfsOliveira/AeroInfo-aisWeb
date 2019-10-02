@@ -13,6 +13,14 @@ body {
   font-size: 35px;
 }
 
+.metar-taf {
+  margin: 20px;
+}
+
+.info-met {
+  font-size: 15px;
+}
+
 .material-icons {
   float: right;
   font-size: 40px;

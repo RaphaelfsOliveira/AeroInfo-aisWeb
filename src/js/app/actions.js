@@ -13,6 +13,10 @@ export const loadResults = (cardSize, results, template) => {
   });
 };
 
+export const clearResults = () => {
+  elements.cardDeck.innerHTML = '';
+};
+
 export const initLoading = (parent, elementId) => {
   parent.insertAdjacentHTML('afterbegin', templates.loading(elementId));
 };

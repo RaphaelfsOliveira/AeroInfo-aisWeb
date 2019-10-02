@@ -7,9 +7,7 @@ export default class Search {
   };
 
   async flightLetters() {
-    // const area = `&area=cartas&icaoCode=${this.query}`;
-    const area = `&area=cartas&icaoCode=SBMT`;
-
+    const area = `&area=cartas&icaoCode=${this.query}`;
     try {
       const getData = await fetch(`${this.URL}${area}`);
       const data = await getData.text();
@@ -20,16 +18,13 @@ export default class Search {
       const items = doc.querySelectorAll('item');
 
       this.dataLetters = getXMLItems(items);
-
     } catch (error) {
       alert(`API Error: ${error}`);
     }
   };
 
   async sunriseSunset() {
-    // const area = `&area=sol&icaoCode=${this.query}`;
-    const area = `&area=sol&icaoCode=SBMT`;
-
+    const area = `&area=sol&icaoCode=${this.query}`;
     try {
       const getData = await fetch(`${this.URL}${area}`);
       const data = await getData.text();
@@ -40,13 +35,27 @@ export default class Search {
       const items = doc.querySelectorAll('day');
 
       this.dataSunriseSunset = getXMLItems(items);
-
     } catch (error) {
       alert(`API Error: ${error}`);
     }
   };
 
-  // end Search
+  async meteorology() {
+    const area = `&area=met&icaoCode=${this.query}`;
+    try {
+      const getData = await fetch(`${this.URL}${area}`);
+      const data = await getData.text();
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(data, "application/xml");
+
+      const items = doc.querySelectorAll('met');
+      
+      this.dataMeteorology = getXMLItems(items);
+    } catch (error) {
+      alert(`API Error: ${error}`);
+    }
+  };
 };
 
 const getXMLItems = node => {
