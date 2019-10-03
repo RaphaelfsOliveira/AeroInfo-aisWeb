@@ -15,18 +15,21 @@ export const controlSearch = async () => {
     actions.clearResults();
 
     const loadId = 'loading';
-    actions.initLoading(elements.cardDeck, loadId);
+    actions.addLoadingMsg(elements.cardDeck, 'loading', loadId);
 
     await state.search.flightLetters();
     await state.search.sunriseSunset();
     await state.search.meteorology();
 
+    if (state.search.dataLetters.length) {
+      actions.loadResults(6, state.search.dataMeteorology, 'cardMeteorology');
+      actions.loadResults(6, state.search.dataSunriseSunset, 'cardSunriseSunset');
+      actions.loadResults(4, state.search.dataLetters, 'cardLetter');
+    } else {
+      actions.addLoadingMsg(elements.cardDeck, 'alertError');
+    }
+
     actions.finishLoading(`#${loadId}`);
     actions.disableForm(false);
-
-    actions.loadResults(6, state.search.dataMeteorology, 'cardMeteorology');
-    actions.loadResults(6, state.search.dataSunriseSunset, 'cardSunriseSunset');
-    actions.loadResults(4, state.search.dataLetters, 'cardLetter');
   };
-
 };

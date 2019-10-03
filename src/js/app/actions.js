@@ -17,8 +17,8 @@ export const clearResults = () => {
   elements.cardDeck.innerHTML = '';
 };
 
-export const initLoading = (parent, elementId) => {
-  parent.insertAdjacentHTML('afterbegin', templates.loading(elementId));
+export const addLoadingMsg = (parent, template, elementId=null) => {
+  parent.insertAdjacentHTML('afterbegin', templates[template](elementId));
 };
 
 export const finishLoading = elementId => {

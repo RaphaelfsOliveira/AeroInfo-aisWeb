@@ -98,3 +98,15 @@ export const loading = elementId => {
     <div class="lds-dual-ring"></div>
   </div>`
 };
+
+export const alertError = elementId => {
+  return `
+  <div class="col-sm-12 text-center" id="${elementId}">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Desculpe...</strong> Não existem aeroportos com esse código.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>`;
+}
