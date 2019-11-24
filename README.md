@@ -19,5 +19,5 @@ https://raphaelfsoliveira.github.io/AeroInfo-aisWeb/
 3. Executar o comanto abaixo para instalar as dependências
 > `npm i`
 
-4. Executar o comando abaixo para rodar o projeto
+4. Executar o comando abaixo para rodar o projeto.
 > `npm start`
